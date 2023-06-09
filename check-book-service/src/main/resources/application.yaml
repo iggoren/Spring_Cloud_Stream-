@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: check-book-service
+  cloud:
+    stream:
+      kafka:
+        binder:
+          auto-add-partitions: true
+      bindings:
+        bookEventProcessor-in-0:
+          destination: create-book
+        bookEventProcessor-out-0:
+          destination: store-book
+          contentType: application/json
+
+server:
+  port: 8090
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+Lospring:
+  sleuth:
+    sampler:
+      probability: 2.0
