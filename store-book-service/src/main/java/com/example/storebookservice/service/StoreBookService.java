@@ -16,9 +16,9 @@ public class StoreBookService {
 
 
     @StreamListener(Sink.INPUT)
-    public void storeBook(Message<Book> bookMessage) {
-
-        log.info("received book {}", bookMessage.getPayload());
+    public void storeBook(Message<Book> message) {
+        Book book = message.getPayload();
+        log.info("received book {}, {}", book.getName(), book.getStatus());
     }
 
 }
