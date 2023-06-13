@@ -7,7 +7,7 @@ spring:
         binder:
           auto-add-partitions: true
       bindings:
-        bookEventProcessor-in-0:
+        input:
         destination: store-book
         contentType: application/json
 server:

@@ -15,6 +15,6 @@ public class Book {
     private Long id;
     private String name;
     private String description;
-    private String status = "unchecked";
+    private String status;
     private double price;
 }
